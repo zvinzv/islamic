@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="./node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="./node_modules/bootstrap/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="./node_modules/bootstrap-icons/font/bootstrap-icons.css">
+  <title>DEV</title>
+  <style>
+    :root{
+      --light: rgb(248,249,250);
+      --dark: rgb(33,37,41);
+      --even: #64af8d;
+      --even-alt: #9affb5;
+      --odd: #9f967b;
+      --odd-alt: #f9dd9a;
+    }
+    
+    body{
+      background-color: #242b2f;
+    }
+    ::-webkit-scrollbar{
+      width: 10px;
+      background-color: transparent;
+    }
+    ::-webkit-scrollbar-thumb{
+      background-color: rgb(83, 83, 83);
+      border-radius: 3000px;
+    }
+    .tool{
+      padding: 10px 15px !important;
+      margin: 0;
+    }
+    
+    .box-tool{
+      transition: 200ms all;
+      background-color: var(--even) !important;
+      box-shadow: 0 0 20px black;
+    }
+    .box-tool:hover{
+      box-shadow: var(--even-alt) 0 0 20px ;
+      background-color: var(--even-alt) !important;
+      flex-grow: 2 !important;
+    }
+    .box-tool:nth-child(odd){
+      transition: 200ms all;
+      background-color: var(--odd) !important;
+    }
+    
+    .box-tool:nth-child(odd):hover{
+      flex-grow: 2 !important;
+
+      box-shadow: var(--odd-alt)  0 0 20px ;
+      background-color: var(--odd-alt) !important;
+    }
+    #sideBar{
+      background-color: var(--dark);
+      width: 90%;
+      margin: 20px auto;
+      position: fixed;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+    ul#ul-list{
+      display: flex;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      overflow: auto;
+    }
+    ul::-webkit-scrollbar{
+      background-color: transparent;
+      display: none;
+    }
+    li{
+      text-align: center;
+    }
+    a{
+      margin: 0;
+      padding: 10px 20px;
+      display: block;
+      transition: 200ms all;
+    }
+    
+    .active, a:hover{
+      color: var(--dark) !important;
+      background-color: var(--light) !important;
+      padding: 10px 25px;
+      z-index: 999;
+    }
+    #prev, #next{
+      background-color: #333 !important;
+      transition: 200ms all;
+    }
+    #prev:hover, #next:hover {
+      background-color: #2e2e2e !important;
+    }
+    #info{
+      margin: 30px 0 0 0;
+      line-break: anywhere;
+      width: 100%;
+    }
+    #info h2{
+      font-weight: 700;
+      text-align: center;
+      font-size: 45px !important;
+    }
+    #info h4{
+      text-align: center;
+      font-size: 25px !important;
+    }
+    .img{
+      margin: 48px 0 !important;
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+      overflow: hidden;
+      padding: 0 !important;
+      flex-wrap: wrap;
+      
+    }
+    .img img{
+      width: 300px;
+    }
+    .img #info{
+      width: auto;
+      display: flex;
+      
+      text-align: left;
+      justify-content: center;
+      flex-direction: column;
+      margin: 0 40px !important
+    }
+    .img #info h2{
+      text-align: start;
+    }
+    .img #info h4{
+      text-align: start;
+    }
+    @media (max-width: 335.98px) {
+      .img #info h2{
+        font-size: 35px !important;
+      }
+      .img #info h4{
+        font-size: 20px !important;
+      }
+    }
+    @media (max-width: 575.98px) {
+      .img img{
+        width: 70%;
+      }
+      .img #info{
+        width: 100%;
+        display: flex;
+        text-align: left;
+        justify-content: center;
+        flex-direction: column;
+        margin: 0 !important
+      }
+      .img #info h2, .img #info h4{
+        text-align: center !important;
+      }
+      .img #info{
+        margin: 0 !important
+      }
+    }
+    @media (max-width: 767.98px) {
+      
+    }
+    @media (max-width: 991.98px) {
+      .img #info h2, .img #info h4{
+      text-align: center !important;
+    }
+    .img #info{
+      margin-top: 40px !important;
+    }
+  }
+    @media (max-width: 1199.98px) {}
+    @media (max-width: 1399.98px) {}
+  </style>
+</head>
+<body>
+  <!--  -->
+  <div>
+    <div id="sideBar" class="rounded-3 py-2 px-5" style="padding: 10px 60px !important;">
+      <span id="prev" class="rounded-3 user-select-none bg-dark h-100 d-flex justify-content-center align-items-center fs-5 text-light position-absolute end-0 bottom-50" style="transform: translateY(calc(50% + 12px)); width: 45px; cursor: pointer; height: calc(100% - 24px) !important; margin: 12px !important;"><</span>
+      <ul id="ul-list" class="d-flex justify-content-center">
+        <li><a href="#" class="all-links text-light text-bg-dark rounded-3 mx-1 fs-1"> <i class="bi bi-house-fill"></i> </a></li>
+        <li><a href="#" class="all-links text-light text-bg-dark rounded-3 mx-1 fs-1"> <i class="bi bi-bootstrap-fill"></i> </a></li>
+        <li><a href="#" class="all-links text-light text-bg-dark rounded-3 mx-1 fs-1"> <i class="bi bi-diagram-3-fill"></i> </a></li>
+      </ul>
+      <span id="next" class="rounded-3 user-select-none bg-dark h-100 d-flex justify-content-center align-items-center fs-5 text-light position-absolute start-0 bottom-50" style="transform: translateY(calc(50% + 12px)); width: 45px; cursor: pointer;height: calc(100% - 24px) !important; margin: 12px !important;">></span>
+    </div>
+  </div>
+  <div class="container">
+    <div class="img my-2 py-5" dir="ltr">
+      <img src="./Untitled-2.jpg" class="rounded-circle">
+      <div id="info" dir="ltr" class="mx-4">
+        <h2 class="text-light fs-1">ZVINZV | DEV</h2>
+        <h4 class="text-light fs-4">Graphics designer,<br>Web & Application Programmer.</h4>
+      </div>
+    </div>
+    <div id="content" class="d-flex justify-content-center">
+      <div class="w-100 d-flex flex-wrap gap-4 justify-content-start my-5">
+        
+        
+        <div class="box-tool flex-grow-1 bg-warning-subtle rounded-2">
+          <h1 class="tool text-center px-2 py-2 user-select-none" role="button">اوقات الصلاة</h1>
+        </div>
+
+        <div class="box-tool flex-grow-1 bg-warning-subtle rounded-2">
+          <h1 class="tool text-center px-2 py-2 user-select-none" role="button">اوقات الصلاة</h1>
+        </div>
+
+
+        <div class="box-tool flex-grow-1 bg-warning-subtle rounded-2">
+          <h1 class="tool text-center px-2 py-2 user-select-none" role="button">اوقات الصلاة</h1>
+        </div><div class="box-tool flex-grow-1 bg-warning-subtle rounded-2">
+          <h1 class="tool text-center px-2 py-2 user-select-none" role="button">اوقات الصلاة</h1>
+        </div>
+
+        <div class="box-tool flex-grow-1 bg-warning-subtle rounded-2">
+          <h1 class="tool text-center px-2 py-2 user-select-none" role="button">اوقات الصلاة</h1>
+        </div>
+        <div class="box-tool flex-grow-1 bg-warning-subtle rounded-2">
+          <h1 class="tool text-center px-2 py-2 user-select-none" role="button">اوقات الصلاة</h1>
+        </div>
+        <div class="box-tool flex-grow-1 bg-warning-subtle rounded-2">
+          <h1 class="tool text-center px-2 py-2 user-select-none" role="button">اوقات الصلاة</h1>
+        </div>
+        <div class="box-tool flex-grow-1 bg-warning-subtle rounded-2">
+          <h1 class="tool text-center px-2 py-2 user-select-none" role="button">اوقات الصلاة</h1>
+        </div>
+
+        <div class="box-tool flex-grow-1 bg-warning-subtle rounded-2">
+          <h1 class="tool text-center px-2 py-2 user-select-none" role="button">اوقات الصلاة</h1>
+        </div>
+
+        <div class="box-tool flex-grow-1 bg-warning-subtle rounded-2">
+          <h1 class="tool text-center px-2 py-2 user-select-none" role="button">اوقات الصلاة</h1>
+        </div>
+
+        <div class="box-tool flex-grow-1 bg-warning-subtle rounded-2">
+          <h1 class="tool text-center px-2 py-2 user-select-none" role="button">اوقات الصلاة</h1>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="main.js"></script>
+</body>
+</html>
